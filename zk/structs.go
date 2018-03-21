@@ -230,6 +230,13 @@ type SetDataRequest struct {
 
 type setDataResponse statResponse
 
+type reconfigRequest struct {
+	JoiningServers string
+	LeavingServers string
+	NewMembers string
+	FromConfig int64
+}
+
 type setMaxChildren struct {
 	Path string
 	Max  int32

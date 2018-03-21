@@ -25,6 +25,13 @@ const (
 	opGetChildren2 = 12
 	opCheck        = 13
 	opMulti        = 14
+	//opCreate2      = 15
+	opReconfig     = 16
+	//opCheckWatches = 17
+	//opRemoveWatches= 18
+	//opCreateContainer = 19
+	//opDeleteContainer = 20
+	//opCreateTTL    =21
 	opClose        = -11
 	opSetAuth      = 100
 	opSetWatches   = 101

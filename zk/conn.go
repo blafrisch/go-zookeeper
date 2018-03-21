@@ -1181,6 +1181,12 @@ func (c *Conn) Sync(path string) (string, error) {
 	return res.Path, err
 }
 
+func (c *Conn) Reconfig(joiningServers string, leavingServers string, newMembers string, fromConfig int64) ([]byte, *Stat, error) {
+	res := &getDataResponse{}
+	_, err := c.request(opReconfig, &reconfigRequest{JoiningServers: joiningServers, LeavingServers: leavingServers, NewMembers: newMembers, FromConfig: fromConfig}, res, nil)
+	return res.Data, &res.Stat, err
+}
+
 type MultiResponse struct {
 	Stat   *Stat
 	String string
